@@ -1,0 +1,4 @@
+include ':app-video'
+include ':app-setting'
+include ':app'
+rootProject.name = "My Application"

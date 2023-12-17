@@ -1,0 +1,16 @@
+apply from: '../app.gradle'
+
+android {
+    resourcePrefix 'video_'
+    defaultConfig {
+        if (!isRelease) {
+            applicationId "com.example.video"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+}
+
+dependencies {
+
+}
