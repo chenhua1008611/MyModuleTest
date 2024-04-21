@@ -4,17 +4,26 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion '30.0.1'
 
     defaultConfig {
         applicationId "com.example.myapplication"
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        sourceSets.main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+    }
+
+    buildFeatures {
+        // 启用 Jetpack Compose
+        compose true
     }
 
     buildTypes {
@@ -27,8 +36,19 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.0.1'
+    }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
     }
 }
 
@@ -39,13 +59,54 @@ dependencies {
     implementation androidx.appcompat
     implementation androidx.material
     implementation androidx.constraintlayout
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6'
+//    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:2.12'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6'
+    implementation 'com.kwai.koom:java-oom:1.0.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation test.junit_android
     androidTestImplementation test.espresso
+
+    def lifecycle_version = "2.3.1"// ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"// LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"// Lifecycle
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+
+//    def work_version = "2.7.1"
+    // (Java only)
+//    implementation "androidx.work:work-runtime:$work_version"
+    // Kotlin + coroutines
+//    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+    implementation 'com.android.volley:volley:1.1.0'
 
     if (isRelease) {
         implementation project(':app-setting')
         implementation project(':app-video')
     }
+
+    //添加本地依赖
+//    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+//    implementation files('libs/flutter_release-1.0.aar')
+//    implementation 'io.flutter:flutter_embedding_release:1.0.0-e76c956498841e1ab458577d3892003e553e4f3c'
+//    implementation 'android.arch.lifecycle:common-java8:1.1.0'
+
+    implementation project(':flutter')
+
+    // Integration with activities
+    implementation 'androidx.activity:activity-compose:1.3.1'
+    // Compose Material Design
+    implementation 'androidx.compose.material:material:1.0.1'
+    // Animations
+    implementation 'androidx.compose.animation:animation:1.0.1'
+    // Tooling support (Previews, etc.)
+    implementation 'androidx.compose.ui:ui-tooling:1.0.1'
+    // Integration with ViewModels
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07'
+    // UI Tests
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.1'
+
 
 }

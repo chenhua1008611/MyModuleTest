@@ -2,3 +2,8 @@ include ':app-video'
 include ':app-setting'
 include ':app'
 rootProject.name = "My Application"
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'flutter_module/.android/include_flutter.groovy'
+))
