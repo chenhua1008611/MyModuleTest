@@ -4,8 +4,6 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-6.5-bin/e6h1pq4g9yrzbafg4y56eaedf/gradle-6.5" />
         <option name="gradleJvm" value="#JAVA_HOME" />
@@ -18,6 +16,7 @@
             <option value="$PROJECT_DIR$/../flutter_module/.android/Flutter" />
           </set>
         </option>
+        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

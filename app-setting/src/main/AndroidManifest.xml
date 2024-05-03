@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ClientAidlActivity"/>
+
     </application>
+
+    <!--  配置服务端的包名-->
+    <queries>
+        <package android:name="com.example.myapplication" />
+    </queries>
 
 </manifest>

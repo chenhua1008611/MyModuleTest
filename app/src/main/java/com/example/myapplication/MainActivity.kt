@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.setting.SettingActivity
-import com.example.video.VideoActivity
+//import com.example.setting.SettingActivity
+//import com.example.video.VideoActivity
 import io.flutter.embedding.android.FlutterActivity
 
 class MainActivity : AppCompatActivity() {
@@ -17,13 +17,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<View>(R.id.btn_video).setOnClickListener {
-            startActivity(Intent(this,VideoActivity::class.java))
-        }
-
-        findViewById<View>(R.id.btn_setting).setOnClickListener {
-            startActivity(Intent(this,SettingActivity::class.java))
-        }
+//        findViewById<View>(R.id.btn_video).setOnClickListener {
+//            startActivity(Intent(this,VideoActivity::class.java))
+//        }
+//
+//        findViewById<View>(R.id.btn_setting).setOnClickListener {
+//            startActivity(Intent(this,SettingActivity::class.java))
+//        }
 
         findViewById<View>(R.id.btn_flutter).setOnClickListener {
             startActivity(FlutterActivity.createDefaultIntent(this));
