@@ -3,6 +3,19 @@ plugins {
     id 'kotlin-android'
 }
 
+apply plugin: MyBuildSrcPlugin
+
+apply plugin: MyPlugin
+
+class MyPlugin implements Plugin<Project> {
+
+    @Override
+    void apply(Project project) {
+        println "this is myplugin"
+
+    }
+}
+
 android {
     compileSdkVersion 31
     buildToolsVersion '30.0.1'
